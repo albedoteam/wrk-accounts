@@ -4,6 +4,10 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>AlbedoTeam.Accounts.Business.Tests</AssemblyName>
+
+        <RootNamespace>AlbedoTeam.Accounts.Business.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

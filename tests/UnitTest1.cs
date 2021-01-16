@@ -1,7 +1,6 @@
-using System;
 using Xunit;
 
-namespace tests
+namespace AlbedoTeam.Accounts.Business.Tests
 {
     public class UnitTest1
     {
