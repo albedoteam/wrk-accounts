@@ -26,9 +26,12 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 
         public async Task Consume(ConsumeContext<ListAccountsRequest> context)
         {
+            var page = context.Message.Page > 0 ? context.Message.Page : 1;
+            var pageSize = context.Message.PageSize <= 1 ? 1 : context.Message.PageSize;
+            
             var (totalPages, accounts) = await _repository.QueryByPage(
-                context.Message.Page,
-                context.Message.PageSize,
+                page,
+                pageSize,
                 a => context.Message.ShowDeleted || !a.IsDeleted,
                 a => a.Name);
 
@@ -41,7 +44,7 @@ namespace AlbedoTeam.Accounts.Business.Consumers
                     context.Message.PageSize,
                     RecordsInPage = accounts.Count,
                     TotalPages = totalPages,
-                    Items = _mapper.MapModelToResponse((List<Account>) accounts)
+                    Items = _mapper.MapModelToResponse(accounts.ToList())
                 });
         }
     }

@@ -26,8 +26,7 @@ namespace AlbedoTeam.Accounts.Business
 
             services.AddBroker(
                 configure => configure
-                    .SetBrokerOptions(broker => broker.Host = configuration.GetValue<string>("BrokerOptions:Host"))
-                    .WithEventStore(),
+                    .SetBrokerOptions(broker => broker.Host = configuration.GetValue<string>("BrokerOptions:Host")),
                 consumers => consumers
                     .Add<ListAccountsRequestConsumer>()
                     .Add<GetAccountRequestConsumer>()

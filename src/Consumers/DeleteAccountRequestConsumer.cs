@@ -31,7 +31,7 @@ namespace AlbedoTeam.Accounts.Business.Consumers
                 await _repository.DeleteById(context.Message.Id);
 
                 // get "soft-deleted" account
-                account = await  _repository.FindById(context.Message.Id);
+                account = await  _repository.FindById(context.Message.Id, true);
 
                 await context.Publish(_mapper.MapModelToDeletedEvent(account)); // notifies 
                 await context.RespondAsync(_mapper.MapModelToDeletedEvent(account)); // respond async
