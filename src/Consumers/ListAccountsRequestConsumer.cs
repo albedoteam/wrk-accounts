@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Accounts.Contracts.Requests;
 using Accounts.Contracts.Responses;
 using AlbedoTeam.Accounts.Business.Db;
 using AlbedoTeam.Accounts.Business.Mappers;
-using AlbedoTeam.Accounts.Business.Models;
 using MassTransit;
-using MongoDB.Driver;
 
 namespace AlbedoTeam.Accounts.Business.Consumers
 {
     public class ListAccountsRequestConsumer : IConsumer<ListAccountsRequest>
     {
-        private readonly IAccountRepository _repository;
         private readonly IAccountMapper _mapper;
+        private readonly IAccountRepository _repository;
 
         public ListAccountsRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
@@ -28,7 +23,7 @@ namespace AlbedoTeam.Accounts.Business.Consumers
         {
             var page = context.Message.Page > 0 ? context.Message.Page : 1;
             var pageSize = context.Message.PageSize <= 1 ? 1 : context.Message.PageSize;
-            
+
             var (totalPages, accounts) = await _repository.QueryByPage(
                 page,
                 pageSize,

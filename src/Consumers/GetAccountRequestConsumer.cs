@@ -9,8 +9,8 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 {
     public class GetAccountRequestConsumer : IConsumer<GetAccountRequest>
     {
-        private readonly IAccountRepository _repository;
         private readonly IAccountMapper _mapper;
+        private readonly IAccountRepository _repository;
 
         public GetAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
         {

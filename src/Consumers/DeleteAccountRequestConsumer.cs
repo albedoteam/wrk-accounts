@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Accounts.Contracts.Requests;
 using Accounts.Contracts.Responses;
 using AlbedoTeam.Accounts.Business.Db;
@@ -10,8 +9,8 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 {
     public class DeleteAccountRequestConsumer : IConsumer<DeleteAccountRequest>
     {
-        private readonly IAccountRepository _repository;
         private readonly IAccountMapper _mapper;
+        private readonly IAccountRepository _repository;
 
         public DeleteAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
@@ -31,7 +30,7 @@ namespace AlbedoTeam.Accounts.Business.Consumers
                 await _repository.DeleteById(context.Message.Id);
 
                 // get "soft-deleted" account
-                account = await  _repository.FindById(context.Message.Id, true);
+                account = await _repository.FindById(context.Message.Id, true);
 
                 await context.Publish(_mapper.MapModelToDeletedEvent(account)); // notifies 
                 await context.RespondAsync(_mapper.MapModelToDeletedEvent(account)); // respond async

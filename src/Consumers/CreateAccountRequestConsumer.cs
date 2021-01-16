@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Accounts.Contracts.Requests;
 using Accounts.Contracts.Responses;
@@ -11,8 +10,8 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 {
     public class CreateAccountRequestConsumer : IConsumer<CreateAccountRequest>
     {
-        private readonly IAccountRepository _repository;
         private readonly IAccountMapper _mapper;
+        private readonly IAccountRepository _repository;
 
         public CreateAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
         {

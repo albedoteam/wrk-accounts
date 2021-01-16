@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Accounts.Contracts.Requests;
 using Accounts.Contracts.Responses;
 using AlbedoTeam.Accounts.Business.Db;
@@ -12,8 +11,8 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 {
     public class UpdateAccountRequestConsumer : IConsumer<UpdateAccountRequest>
     {
-        private readonly IAccountRepository _repository;
         private readonly IAccountMapper _mapper;
+        private readonly IAccountRepository _repository;
 
         public UpdateAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
@@ -37,10 +36,10 @@ namespace AlbedoTeam.Accounts.Business.Consumers
                     Builders<Account>.Update.Set(a => a.Enabled, context.Message.Enabled));
 
                 await _repository.UpdateById(context.Message.Id, update);
-                
+
                 // get "updated" account
-                account = await  _repository.FindById(context.Message.Id);
-                
+                account = await _repository.FindById(context.Message.Id);
+
                 var updatedEvent = _mapper.MapModelToUpdatedEvent(account);
 
                 await context.Publish(updatedEvent);
