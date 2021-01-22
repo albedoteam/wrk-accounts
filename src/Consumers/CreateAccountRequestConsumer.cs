@@ -22,7 +22,10 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 
         public async Task Consume(ConsumeContext<CreateAccount> context)
         {
-            var exists = (await _repository.FilterBy(t => t.Name.Equals(context.Message.IdentificationNumber))).Any();
+            var exists =
+                (await _repository.FilterBy(t => t.IdentificationNumber.Equals(context.Message.IdentificationNumber)))
+                .Any();
+
             if (exists)
             {
                 await context.RespondAsync<ErrorResponse>(new
@@ -30,11 +33,12 @@ namespace AlbedoTeam.Accounts.Business.Consumers
                     ErrorType = ErrorType.AlreadyExists,
                     ErrorMessage = $"Already exists for identification number {context.Message.IdentificationNumber}"
                 });
-                return;
             }
-
-            var account = await _repository.InsertOne(_mapper.MapRequestToModel(context.Message));
-            await context.RespondAsync(_mapper.MapModelToResponse(account));
+            else
+            {
+                var account = await _repository.InsertOne(_mapper.MapRequestToModel(context.Message));
+                await context.RespondAsync(_mapper.MapModelToResponse(account));
+            }
         }
     }
 }
