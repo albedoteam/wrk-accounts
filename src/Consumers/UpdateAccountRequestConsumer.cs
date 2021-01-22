@@ -2,6 +2,7 @@
 using AlbedoTeam.Accounts.Business.Db;
 using AlbedoTeam.Accounts.Business.Mappers;
 using AlbedoTeam.Accounts.Business.Models;
+using AlbedoTeam.Accounts.Contracts.Common;
 using AlbedoTeam.Accounts.Contracts.Requests;
 using AlbedoTeam.Accounts.Contracts.Responses;
 using MassTransit;
