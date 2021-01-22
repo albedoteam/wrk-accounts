@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using Accounts.Contracts.Events;
-using Accounts.Contracts.Requests;
-using Accounts.Contracts.Responses;
 using AlbedoTeam.Accounts.Business.Models;
+using AlbedoTeam.Accounts.Contracts.Events;
+using AlbedoTeam.Accounts.Contracts.Requests;
+using AlbedoTeam.Accounts.Contracts.Responses;
 
 namespace AlbedoTeam.Accounts.Business.Mappers
 {
     public interface IAccountMapper
     {
         // request to model
-        Account MapRequestToModel(CreateAccountRequest request);
+        Account MapRequestToModel(CreateAccount request);
         List<AccountResponse> MapModelToResponse(List<Account> modelList);
 
         // model to response

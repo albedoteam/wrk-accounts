@@ -1,14 +1,14 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Accounts.Contracts.Requests;
-using Accounts.Contracts.Responses;
 using AlbedoTeam.Accounts.Business.Db;
 using AlbedoTeam.Accounts.Business.Mappers;
+using AlbedoTeam.Accounts.Contracts.Requests;
+using AlbedoTeam.Accounts.Contracts.Responses;
 using MassTransit;
 
 namespace AlbedoTeam.Accounts.Business.Consumers
 {
-    public class CreateAccountRequestConsumer : IConsumer<CreateAccountRequest>
+    public class CreateAccountRequestConsumer : IConsumer<CreateAccount>
     {
         private readonly IAccountMapper _mapper;
         private readonly IAccountRepository _repository;
@@ -19,12 +19,16 @@ namespace AlbedoTeam.Accounts.Business.Consumers
             _mapper = mapper;
         }
 
-        public async Task Consume(ConsumeContext<CreateAccountRequest> context)
+        public async Task Consume(ConsumeContext<CreateAccount> context)
         {
             var exists = (await _repository.FilterBy(t => t.Name.Equals(context.Message.Name))).Any();
             if (exists)
             {
-                await context.RespondAsync<AccountExistsResponse>(new { });
+                await context.RespondAsync<ErrorResponse>(new
+                {
+                    ErrorType = ErrorType.AlreadyExists,
+                    ErrorMessage = $"Already exists for name {context.Message.Name}"
+                });
                 return;
             }
 

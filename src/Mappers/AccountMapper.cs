@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Accounts.Contracts.Events;
-using Accounts.Contracts.Requests;
-using Accounts.Contracts.Responses;
 using AlbedoTeam.Accounts.Business.Models;
+using AlbedoTeam.Accounts.Contracts.Events;
+using AlbedoTeam.Accounts.Contracts.Requests;
+using AlbedoTeam.Accounts.Contracts.Responses;
 using AutoMapper;
 
 namespace AlbedoTeam.Accounts.Business.Mappers
@@ -16,7 +16,7 @@ namespace AlbedoTeam.Accounts.Business.Mappers
             var config = new MapperConfiguration(cfg =>
             {
                 // request to model
-                cfg.CreateMap<Account, CreateAccountRequest>().ReverseMap();
+                cfg.CreateMap<Account, CreateAccount>().ReverseMap();
 
                 // model to response
                 cfg.CreateMap<Account, AccountResponse>(MemberList.Destination)
@@ -33,9 +33,9 @@ namespace AlbedoTeam.Accounts.Business.Mappers
             _mapper = config.CreateMapper();
         }
 
-        public Account MapRequestToModel(CreateAccountRequest request)
+        public Account MapRequestToModel(CreateAccount request)
         {
-            return _mapper.Map<CreateAccountRequest, Account>(request);
+            return _mapper.Map<CreateAccount, Account>(request);
         }
 
         public List<AccountResponse> MapModelToResponse(List<Account> modelList)
