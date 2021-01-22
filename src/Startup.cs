@@ -1,7 +1,7 @@
-﻿using Accounts.Contracts.Events;
-using AlbedoTeam.Accounts.Business.Consumers;
+﻿using AlbedoTeam.Accounts.Business.Consumers;
 using AlbedoTeam.Accounts.Business.Db;
 using AlbedoTeam.Accounts.Business.Mappers;
+using AlbedoTeam.Accounts.Contracts.Events;
 using AlbedoTeam.Sdk.DataLayerAccess;
 using AlbedoTeam.Sdk.JobWorker.Configuration.Abstractions;
 using AlbedoTeam.Sdk.MessageConsumer;
