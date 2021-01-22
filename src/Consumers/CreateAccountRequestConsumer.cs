@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AlbedoTeam.Accounts.Business.Db;
 using AlbedoTeam.Accounts.Business.Mappers;
+using AlbedoTeam.Accounts.Contracts.Common;
 using AlbedoTeam.Accounts.Contracts.Requests;
 using AlbedoTeam.Accounts.Contracts.Responses;
 using MassTransit;
@@ -21,13 +22,13 @@ namespace AlbedoTeam.Accounts.Business.Consumers
 
         public async Task Consume(ConsumeContext<CreateAccount> context)
         {
-            var exists = (await _repository.FilterBy(t => t.Name.Equals(context.Message.Name))).Any();
+            var exists = (await _repository.FilterBy(t => t.Name.Equals(context.Message.IdentificationNumber))).Any();
             if (exists)
             {
                 await context.RespondAsync<ErrorResponse>(new
                 {
                     ErrorType = ErrorType.AlreadyExists,
-                    ErrorMessage = $"Already exists for name {context.Message.Name}"
+                    ErrorMessage = $"Already exists for identification number {context.Message.IdentificationNumber}"
                 });
                 return;
             }
