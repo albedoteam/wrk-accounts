@@ -10,12 +10,12 @@ using MongoDB.Driver;
 
 namespace AlbedoTeam.Accounts.Business.Consumers
 {
-    public class UpdateAccountRequestConsumer : IConsumer<UpdateAccount>
+    public class UpdateAccountConsumer : IConsumer<UpdateAccount>
     {
         private readonly IAccountMapper _mapper;
         private readonly IAccountRepository _repository;
 
-        public UpdateAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
+        public UpdateAccountConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
