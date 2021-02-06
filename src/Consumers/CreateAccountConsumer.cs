@@ -9,12 +9,12 @@ using MassTransit;
 
 namespace AlbedoTeam.Accounts.Business.Consumers
 {
-    public class CreateAccountRequestConsumer : IConsumer<CreateAccount>
+    public class CreateAccountConsumer : IConsumer<CreateAccount>
     {
         private readonly IAccountMapper _mapper;
         private readonly IAccountRepository _repository;
 
-        public CreateAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
+        public CreateAccountConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

@@ -28,11 +28,11 @@ namespace AlbedoTeam.Accounts.Business
                 configure => configure
                     .SetBrokerOptions(broker => broker.Host = configuration.GetValue<string>("BrokerOptions:Host")),
                 consumers => consumers
-                    .Add<ListAccountsRequestConsumer>()
-                    .Add<GetAccountRequestConsumer>()
-                    .Add<CreateAccountRequestConsumer>()
-                    .Add<UpdateAccountRequestConsumer>()
-                    .Add<DeleteAccountRequestConsumer>(),
+                    .Add<ListAccountsConsumer>()
+                    .Add<GetAccountConsumer>()
+                    .Add<CreateAccountConsumer>()
+                    .Add<UpdateAccountConsumer>()
+                    .Add<DeleteAccountConsumer>(),
                 queues => queues
                     .Map<AccountUpdated>()
                     .Map<AccountDeleted>());

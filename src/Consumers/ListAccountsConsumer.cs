@@ -12,12 +12,12 @@ using MongoDB.Driver;
 
 namespace AlbedoTeam.Accounts.Business.Consumers
 {
-    public class ListAccountsRequestConsumer : IConsumer<ListAccounts>
+    public class ListAccountsConsumer : IConsumer<ListAccounts>
     {
         private readonly IAccountMapper _mapper;
         private readonly IAccountRepository _repository;
 
-        public ListAccountsRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
+        public ListAccountsConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

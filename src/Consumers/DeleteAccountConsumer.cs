@@ -8,12 +8,12 @@ using MassTransit;
 
 namespace AlbedoTeam.Accounts.Business.Consumers
 {
-    public class DeleteAccountRequestConsumer : IConsumer<DeleteAccount>
+    public class DeleteAccountConsumer : IConsumer<DeleteAccount>
     {
         private readonly IAccountMapper _mapper;
         private readonly IAccountRepository _repository;
 
-        public DeleteAccountRequestConsumer(IAccountRepository repository, IAccountMapper mapper)
+        public DeleteAccountConsumer(IAccountRepository repository, IAccountMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
