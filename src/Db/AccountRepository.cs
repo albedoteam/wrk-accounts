@@ -6,7 +6,7 @@ namespace AlbedoTeam.Accounts.Business.Db
 {
     public class AccountRepository : BaseRepository<Account>, IAccountRepository
     {
-        public AccountRepository(IDbContext<Account> context) : base(context)
+        public AccountRepository(IDbContext<Account> context, IHelpers<Account> helpers) : base(context, helpers)
         {
         }
     }

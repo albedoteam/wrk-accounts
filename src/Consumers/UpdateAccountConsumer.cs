@@ -36,7 +36,7 @@ namespace AlbedoTeam.Accounts.Business.Consumers
             }
 
             var update = Builders<Account>.Update.Combine(
-                Builders<Account>.Update.Set(a => a.Name, context.Message.Name),
+                Builders<Account>.Update.Set(a => a.DisplayName, context.Message.DisplayName),
                 Builders<Account>.Update.Set(a => a.Description, context.Message.Description),
                 Builders<Account>.Update.Set(a => a.IdentificationNumber, context.Message.IdentificationNumber),
                 Builders<Account>.Update.Set(a => a.Enabled, context.Message.Enabled));
