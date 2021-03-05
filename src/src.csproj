@@ -3,8 +3,8 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <AssemblyName>AlbedoTeam.Accounts.Business</AssemblyName>
-        <RootNamespace>AlbedoTeam.Accounts.Business</RootNamespace>
+        <AssemblyName>Accounts.Business</AssemblyName>
+        <RootNamespace>Accounts.Business</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
