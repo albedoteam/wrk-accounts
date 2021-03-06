@@ -5,19 +5,23 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Accounts.Business</AssemblyName>
     <RootNamespace>Accounts.Business</RootNamespace>
+    <UserSecretsId>f099c08b-357b-44e8-ab52-2ef66f487fde</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AlbedoTeam.Accounts.Contracts" Version="1.0.0-CI-20210226-160826" />
     <PackageReference Include="AlbedoTeam.Sdk.DataLayerAccess" Version="1.0.0-CI-20210227-151747" />
-    <PackageReference Include="AlbedoTeam.Sdk.JobWorker" Version="1.0.0-CI-20210306-201237" />
+    <PackageReference Include="AlbedoTeam.Sdk.JobWorker" Version="1.0.0-CI-20210306-212937" />
     <PackageReference Include="AlbedoTeam.Sdk.MessageConsumer" Version="1.0.0-CI-20210227-011616" />
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="MassTransit.Analyzers" Version="7.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="appsettings.json">
+    <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </None>
   </ItemGroup>
+  
 </Project>
