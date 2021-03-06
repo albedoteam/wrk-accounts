@@ -1,6 +1,6 @@
 ﻿using AlbedoTeam.Sdk.JobWorker;
 
-namespace AlbedoTeam.Accounts.Business
+namespace Accounts.Business
 {
     internal static class Program
     {

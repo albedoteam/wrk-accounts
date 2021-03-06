@@ -1,4 +1,5 @@
-﻿using AlbedoTeam.Accounts.Business.Consumers;
+﻿using AlbedoTeam.Accounts.Business;
+using AlbedoTeam.Accounts.Business.Consumers;
 using AlbedoTeam.Accounts.Business.Db;
 using AlbedoTeam.Accounts.Business.Mappers;
 using AlbedoTeam.Accounts.Contracts.Events;
@@ -8,7 +9,7 @@ using AlbedoTeam.Sdk.MessageConsumer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AlbedoTeam.Accounts.Business
+namespace Accounts.Business
 {
     public class Startup : IWorkerConfigurator
     {
@@ -16,8 +17,8 @@ namespace AlbedoTeam.Accounts.Business
         {
             services.AddDataLayerAccess(db =>
             {
-                db.ConnectionString = configuration.GetValue<string>("DatabaseSettings:ConnectionString");
-                db.DatabaseName = configuration.GetValue<string>("DatabaseSettings:DatabaseName");
+                db.ConnectionString = configuration.GetValue<string>("DatabaseSettings_ConnectionString");
+                db.DatabaseName = configuration.GetValue<string>("DatabaseSettings_DatabaseName");
             });
 
             services.AddMappers();
@@ -26,7 +27,7 @@ namespace AlbedoTeam.Accounts.Business
 
             services.AddBroker(
                 configure => configure
-                    .SetBrokerOptions(broker => broker.Host = configuration.GetValue<string>("BrokerOptions:Host")),
+                    .SetBrokerOptions(broker => broker.Host = configuration.GetValue<string>("Broker_Host")),
                 consumers => consumers
                     .Add<ListAccountsConsumer>()
                     .Add<GetAccountConsumer>()
