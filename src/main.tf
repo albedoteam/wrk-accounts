@@ -17,6 +17,18 @@ resource "kubernetes_namespace" "accounts" {
   }
 }
 
+resource "kubernetes_secret" "accounts" {
+  metadata {
+    name      = var.secret_name
+    namespace = kubernetes_namespace.accounts.metadata.0.name
+  }
+  data = {
+    Broker_Host                       = var.broker_connection_string
+    DatabaseSettings_ConnectionString = var.db_connection_string
+    DatabaseSettings_DatabaseName     = var.db_name
+  }
+}
+
 resource "kubernetes_deployment" "accounts" {
   metadata {
     name      = var.src_name
@@ -54,19 +66,11 @@ resource "kubernetes_deployment" "accounts" {
             container_port = 80
             protocol       = "TCP"
           }
-          env {
-            name  = "Broker_Host"
-            value = var.broker_connection_string
+          env_from {
+            secret_ref {
+              name = var.secret_name
+            }
           }
-          env {
-            name  = "DatabaseSettings_ConnectionString"
-            value = var.db_connection_string
-          }
-          env {
-            name  = "DatabaseSettings_DatabaseName"
-            value = var.db_name
-          }
-          
         }
       }
     }
