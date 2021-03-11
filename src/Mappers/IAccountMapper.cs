@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using AlbedoTeam.Accounts.Business.Models;
+using Accounts.Business.Models;
 using AlbedoTeam.Accounts.Contracts.Events;
 using AlbedoTeam.Accounts.Contracts.Requests;
 using AlbedoTeam.Accounts.Contracts.Responses;
 
-namespace AlbedoTeam.Accounts.Business.Mappers
+namespace Accounts.Business.Mappers
 {
     public interface IAccountMapper
     {

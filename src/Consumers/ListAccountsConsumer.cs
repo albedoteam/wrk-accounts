@@ -1,14 +1,14 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using AlbedoTeam.Accounts.Business.Db;
-using AlbedoTeam.Accounts.Business.Mappers;
-using AlbedoTeam.Accounts.Business.Models;
+using Accounts.Business.Db;
+using Accounts.Business.Mappers;
+using Accounts.Business.Models;
 using AlbedoTeam.Accounts.Contracts.Requests;
 using AlbedoTeam.Accounts.Contracts.Responses;
 using MassTransit;
 using MongoDB.Driver;
 
-namespace AlbedoTeam.Accounts.Business.Consumers
+namespace Accounts.Business.Consumers
 {
     public class ListAccountsConsumer : IConsumer<ListAccounts>
     {

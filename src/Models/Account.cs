@@ -1,7 +1,7 @@
 ﻿using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;
 using AlbedoTeam.Sdk.DataLayerAccess.Attributes;
 
-namespace AlbedoTeam.Accounts.Business.Models
+namespace Accounts.Business.Models
 {
     [BsonCollection("Accounts")]
     public class Account : Document

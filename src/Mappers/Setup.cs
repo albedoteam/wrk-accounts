@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AlbedoTeam.Accounts.Business.Mappers
+namespace Accounts.Business.Mappers
 {
     public static class Setup
     {

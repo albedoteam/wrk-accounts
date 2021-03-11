@@ -1,13 +1,13 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using AlbedoTeam.Accounts.Business.Db;
-using AlbedoTeam.Accounts.Business.Mappers;
+using Accounts.Business.Db;
+using Accounts.Business.Mappers;
 using AlbedoTeam.Accounts.Contracts.Common;
 using AlbedoTeam.Accounts.Contracts.Requests;
 using AlbedoTeam.Accounts.Contracts.Responses;
 using MassTransit;
 
-namespace AlbedoTeam.Accounts.Business.Consumers
+namespace Accounts.Business.Consumers
 {
     public class CreateAccountConsumer : IConsumer<CreateAccount>
     {

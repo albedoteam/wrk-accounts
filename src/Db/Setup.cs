@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace AlbedoTeam.Accounts.Business.Db
+namespace Accounts.Business.Db
 {
     public static class Setup
     {
