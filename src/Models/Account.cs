@@ -1,9 +1,9 @@
-﻿using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;
-using AlbedoTeam.Sdk.DataLayerAccess.Attributes;
-
-namespace Accounts.Business.Models
+﻿namespace Accounts.Business.Models
 {
-    [BsonCollection("Accounts")]
+    using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;
+    using AlbedoTeam.Sdk.DataLayerAccess.Attributes;
+
+    [Collection("Accounts")]
     public class Account : Document
     {
         public string Name { get; set; }

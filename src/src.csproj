@@ -9,11 +9,12 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AlbedoTeam.Accounts.Contracts" Version="1.0.0-CI-20210226-160826" />
-    <PackageReference Include="AlbedoTeam.Sdk.DataLayerAccess" Version="1.0.0-CI-20210227-151747" />
+    <PackageReference Include="AlbedoTeam.Sdk.DataLayerAccess" Version="1.0.0-CI-20210330-181019" />
     <PackageReference Include="AlbedoTeam.Sdk.JobWorker" Version="1.0.0-CI-20210306-212937" />
     <PackageReference Include="AlbedoTeam.Sdk.MessageConsumer" Version="1.0.0-CI-20210227-011616" />
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="MassTransit.Analyzers" Version="7.0.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.8" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 

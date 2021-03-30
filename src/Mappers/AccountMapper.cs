@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using Accounts.Business.Models;
-using AlbedoTeam.Accounts.Contracts.Events;
-using AlbedoTeam.Accounts.Contracts.Requests;
-using AlbedoTeam.Accounts.Contracts.Responses;
-using AutoMapper;
-
-namespace Accounts.Business.Mappers
+﻿namespace Accounts.Business.Mappers
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Accounts.Contracts.Events;
+    using AlbedoTeam.Accounts.Contracts.Requests;
+    using AlbedoTeam.Accounts.Contracts.Responses;
+    using AutoMapper;
+    using Models;
+
     public class AccountMapper : IAccountMapper
     {
         private readonly IMapper _mapper;

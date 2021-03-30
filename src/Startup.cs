@@ -1,15 +1,15 @@
-﻿using Accounts.Business.Consumers;
-using Accounts.Business.Db;
-using Accounts.Business.Mappers;
-using AlbedoTeam.Accounts.Contracts.Events;
-using AlbedoTeam.Sdk.DataLayerAccess;
-using AlbedoTeam.Sdk.JobWorker.Configuration.Abstractions;
-using AlbedoTeam.Sdk.MessageConsumer;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Accounts.Business
+﻿namespace Accounts.Business
 {
+    using AlbedoTeam.Accounts.Contracts.Events;
+    using AlbedoTeam.Sdk.DataLayerAccess;
+    using AlbedoTeam.Sdk.JobWorker.Configuration.Abstractions;
+    using AlbedoTeam.Sdk.MessageConsumer;
+    using Consumers;
+    using Db;
+    using Mappers;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+
     public class Startup : IWorkerConfigurator
     {
         public void Configure(IServiceCollection services, IConfiguration configuration)

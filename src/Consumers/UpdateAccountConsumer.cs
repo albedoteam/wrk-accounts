@@ -1,15 +1,15 @@
-﻿using System.Threading.Tasks;
-using Accounts.Business.Db;
-using Accounts.Business.Mappers;
-using Accounts.Business.Models;
-using AlbedoTeam.Accounts.Contracts.Common;
-using AlbedoTeam.Accounts.Contracts.Requests;
-using AlbedoTeam.Accounts.Contracts.Responses;
-using MassTransit;
-using MongoDB.Driver;
-
-namespace Accounts.Business.Consumers
+﻿namespace Accounts.Business.Consumers
 {
+    using System.Threading.Tasks;
+    using AlbedoTeam.Accounts.Contracts.Common;
+    using AlbedoTeam.Accounts.Contracts.Requests;
+    using AlbedoTeam.Accounts.Contracts.Responses;
+    using Db;
+    using Mappers;
+    using MassTransit;
+    using Models;
+    using MongoDB.Driver;
+
     public class UpdateAccountConsumer : IConsumer<UpdateAccount>
     {
         private readonly IAccountMapper _mapper;

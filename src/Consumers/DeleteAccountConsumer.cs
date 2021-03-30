@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using Accounts.Business.Db;
-using Accounts.Business.Mappers;
-using AlbedoTeam.Accounts.Contracts.Common;
-using AlbedoTeam.Accounts.Contracts.Requests;
-using AlbedoTeam.Accounts.Contracts.Responses;
-using MassTransit;
-
-namespace Accounts.Business.Consumers
+﻿namespace Accounts.Business.Consumers
 {
+    using System.Threading.Tasks;
+    using AlbedoTeam.Accounts.Contracts.Common;
+    using AlbedoTeam.Accounts.Contracts.Requests;
+    using AlbedoTeam.Accounts.Contracts.Responses;
+    using Db;
+    using Mappers;
+    using MassTransit;
+
     public class DeleteAccountConsumer : IConsumer<DeleteAccount>
     {
         private readonly IAccountMapper _mapper;

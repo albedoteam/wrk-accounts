@@ -1,7 +1,7 @@
-﻿using AlbedoTeam.Sdk.JobWorker;
-
-namespace Accounts.Business
+﻿namespace Accounts.Business
 {
+    using AlbedoTeam.Sdk.JobWorker;
+
     internal static class Program
     {
         private static void Main()
