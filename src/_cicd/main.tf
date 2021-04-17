@@ -63,7 +63,7 @@ resource "kubernetes_deployment" "accounts" {
               memory = "100Mi"
             }
             requests = {
-              cpu    = "100m"
+              cpu    = "50m"
               memory = "50Mi"
             }
           }

@@ -4,6 +4,7 @@
     using AlbedoTeam.Accounts.Contracts.Events;
     using AlbedoTeam.Accounts.Contracts.Requests;
     using AlbedoTeam.Accounts.Contracts.Responses;
+    using AlbedoTeam.Sdk.DataLayerAccess.Utils.Query;
     using Models;
 
     public interface IAccountMapper
@@ -18,5 +19,8 @@
         // model to event
         AccountDeleted MapModelToDeletedEvent(Account model);
         AccountUpdated MapModelToUpdatedEvent(Account model);
+        
+        // request to query
+        QueryParams RequestToQuery(ListAccounts request);
     }
 }

@@ -4,6 +4,7 @@
     using AlbedoTeam.Sdk.DataLayerAccess;
     using AlbedoTeam.Sdk.JobWorker.Configuration.Abstractions;
     using AlbedoTeam.Sdk.MessageConsumer;
+    using AlbedoTeam.Sdk.MessageConsumer.Configuration;
     using Consumers;
     using Db;
     using Mappers;
@@ -25,8 +26,28 @@
             services.AddTransient<IJobRunner, JobConsumer>();
 
             services.AddBroker(
-                configure => configure
-                    .SetBrokerOptions(broker => broker.Host = configuration.GetValue<string>("Broker_Host")),
+                configure =>
+                {
+                    configure.SetBrokerOptions(broker =>
+                    {
+                        broker.HostOptions = new HostOptions
+                        {
+                            Host = configuration.GetValue<string>("Broker_Host"),
+                            HeartbeatInterval = 10,
+                            RequestedChannelMax = 40,
+                            RequestedConnectionTimeout = 60000
+                        };
+
+                        broker.KillSwitchOptions = new KillSwitchOptions
+                        {
+                            ActivationThreshold = 10,
+                            TripThreshold = 0.15,
+                            RestartTimeout = 60
+                        };
+
+                        broker.PrefetchCount = 1;
+                    });
+                },
                 consumers => consumers
                     .Add<ListAccountsConsumer>()
                     .Add<GetAccountConsumer>()
