@@ -1,8 +1,8 @@
-﻿using Accounts.Business.Models;
-using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;
-
-namespace Accounts.Business.Db
+﻿namespace Accounts.Business.Db
 {
+    using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;
+    using Models;
+
     public interface IAccountRepository : IBaseRepository<Account>
     {
     }
