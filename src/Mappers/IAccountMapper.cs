@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
-using Accounts.Business.Models;
-using AlbedoTeam.Accounts.Contracts.Events;
-using AlbedoTeam.Accounts.Contracts.Requests;
-using AlbedoTeam.Accounts.Contracts.Responses;
-
-namespace Accounts.Business.Mappers
+﻿namespace Accounts.Business.Mappers
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Accounts.Contracts.Events;
+    using AlbedoTeam.Accounts.Contracts.Requests;
+    using AlbedoTeam.Accounts.Contracts.Responses;
+    using AlbedoTeam.Sdk.DataLayerAccess.Utils.Query;
+    using Models;
+
     public interface IAccountMapper
     {
         // request to model
@@ -18,5 +19,8 @@ namespace Accounts.Business.Mappers
         // model to event
         AccountDeleted MapModelToDeletedEvent(Account model);
         AccountUpdated MapModelToUpdatedEvent(Account model);
+        
+        // request to query
+        QueryParams RequestToQuery(ListAccounts request);
     }
 }

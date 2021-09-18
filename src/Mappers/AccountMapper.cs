@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using Accounts.Business.Models;
-using AlbedoTeam.Accounts.Contracts.Events;
-using AlbedoTeam.Accounts.Contracts.Requests;
-using AlbedoTeam.Accounts.Contracts.Responses;
-using AutoMapper;
-
-namespace Accounts.Business.Mappers
+﻿namespace Accounts.Business.Mappers
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Accounts.Contracts.Events;
+    using AlbedoTeam.Accounts.Contracts.Requests;
+    using AlbedoTeam.Accounts.Contracts.Responses;
+    using AlbedoTeam.Sdk.DataLayerAccess.Utils.Query;
+    using AutoMapper;
+    using Models;
+
     public class AccountMapper : IAccountMapper
     {
         private readonly IMapper _mapper;
@@ -28,6 +29,10 @@ namespace Accounts.Business.Mappers
 
                 cfg.CreateMap<Account, AccountUpdated>(MemberList.Destination)
                     .ForMember(t => t.Id, opt => opt.MapFrom(o => o.Id.ToString()));
+                
+                // request -> query
+                cfg.CreateMap<ListAccounts, QueryParams>(MemberList.Destination)
+                    .ForMember(l => l.Sorting, opt => opt.MapFrom(o => o.Sorting.ToString()));
             });
 
             _mapper = config.CreateMapper();
@@ -56,6 +61,11 @@ namespace Accounts.Business.Mappers
         public AccountUpdated MapModelToUpdatedEvent(Account model)
         {
             return _mapper.Map<Account, AccountUpdated>(model);
+        }
+
+        public QueryParams RequestToQuery(ListAccounts request)
+        {
+            return _mapper.Map<ListAccounts, QueryParams>(request);
         }
     }
 }

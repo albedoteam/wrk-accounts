@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace Accounts.Business.Mappers
+﻿namespace Accounts.Business.Mappers
 {
+    using Microsoft.Extensions.DependencyInjection;
+
     public static class Setup
     {
         public static IServiceCollection AddMappers(this IServiceCollection services)
