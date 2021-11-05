@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Interactors.Handlers
+﻿namespace Accounts.Core.UseCases.Interactors.Handlers
 {
     using System.Threading;
     using System.Threading.Tasks;

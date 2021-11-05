@@ -1,4 +1,4 @@
-﻿namespace Configuration
+﻿namespace Accounts.Configuration
 {
     using System;
     using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;

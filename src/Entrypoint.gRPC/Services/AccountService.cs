@@ -1,4 +1,4 @@
-﻿namespace Accounts.Business.Services
+﻿namespace Accounts.Entrypoint.gRPC.Services
 {
     using System.Threading.Tasks;
     using AccountGrpc;

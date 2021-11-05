@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Interactors.Requests
+﻿namespace Accounts.Core.UseCases.Interactors.Requests
 {
     using Albedo.Sdk.UseCases.Enums;
     using Albedo.Sdk.UseCases.FailFast;

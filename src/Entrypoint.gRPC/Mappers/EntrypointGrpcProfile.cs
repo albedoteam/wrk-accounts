@@ -1,4 +1,4 @@
-﻿namespace Accounts.Business.Mappers
+﻿namespace Accounts.Entrypoint.gRPC.Mappers
 {
     using AccountGrpc;
     using Albedo.Sdk.UseCases.Responses;

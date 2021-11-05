@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Interactors.Validations
+﻿namespace Accounts.Core.UseCases.Interactors.Validations
 {
     public class UpdateAccountValidator
     {

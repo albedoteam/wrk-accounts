@@ -1,4 +1,4 @@
-﻿namespace Core.Entities
+﻿namespace Accounts.Core.Entities
 {
     using Abstractions;
 

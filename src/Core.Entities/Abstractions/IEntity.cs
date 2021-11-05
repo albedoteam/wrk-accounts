@@ -1,4 +1,4 @@
-﻿namespace Core.Entities.Abstractions
+﻿namespace Accounts.Core.Entities.Abstractions
 {
     public interface IEntity<TIdType>
     {

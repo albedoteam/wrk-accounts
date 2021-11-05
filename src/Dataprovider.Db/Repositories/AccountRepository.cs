@@ -1,4 +1,4 @@
-﻿namespace Dataprovider.Db.Repositories
+﻿namespace Accounts.Dataprovider.Db.Repositories
 {
     using System.Linq;
     using System.Threading.Tasks;

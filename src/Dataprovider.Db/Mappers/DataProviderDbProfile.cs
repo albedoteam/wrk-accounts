@@ -1,4 +1,4 @@
-﻿namespace Dataprovider.Db.Mappers
+﻿namespace Accounts.Dataprovider.Db.Mappers
 {
     using Albedo.Sdk.UseCases.Abstractions;
     using AlbedoTeam.Sdk.DataLayerAccess.Utils.Query;

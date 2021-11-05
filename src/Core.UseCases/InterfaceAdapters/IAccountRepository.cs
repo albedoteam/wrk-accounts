@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.InterfaceAdapters
+﻿namespace Accounts.Core.UseCases.InterfaceAdapters
 {
     using System.Threading.Tasks;
     using Albedo.Sdk.UseCases.Abstractions;

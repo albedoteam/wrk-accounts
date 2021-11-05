@@ -1,4 +1,4 @@
-﻿namespace Configuration.DependencyInjection
+﻿namespace Accounts.Configuration.DependencyInjection
 {
     using System;
     using AutoMapper;

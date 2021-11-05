@@ -1,4 +1,4 @@
-﻿namespace Accounts.Business
+﻿namespace Accounts.Entrypoint.gRPC
 {
     using Configuration;
     using Mappers;

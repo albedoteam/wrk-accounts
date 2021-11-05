@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Mappers
+﻿namespace Accounts.Core.UseCases.Mappers
 {
     using Albedo.Sdk.UseCases.Abstractions;
     using Albedo.Sdk.UseCases.Responses;

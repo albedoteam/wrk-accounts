@@ -1,4 +1,4 @@
-namespace Accounts.Business.Extensions
+namespace Accounts.Entrypoint.gRPC.Extensions
 {
     using Albedo.Sdk.UseCases.Enums;
     using Albedo.Sdk.UseCases.FailFast;

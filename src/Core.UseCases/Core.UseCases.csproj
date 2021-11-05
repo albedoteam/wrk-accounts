@@ -2,11 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <AssemblyName>Accounts.Core.UseCases</AssemblyName>
+        <RootNamespace>Accounts.Core.UseCases</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\sdk\Albedo.Sdk.UseCases\Albedo.Sdk.UseCases.csproj"/>
-        <ProjectReference Include="..\Core.Entities\Core.Entities.csproj"/>
+        <ProjectReference Include="..\..\sdk\Albedo.Sdk.UseCases\Albedo.Sdk.UseCases.csproj" />
+        <ProjectReference Include="..\Core.Entities\Core.Entities.csproj" />
     </ItemGroup>
 
 </Project>

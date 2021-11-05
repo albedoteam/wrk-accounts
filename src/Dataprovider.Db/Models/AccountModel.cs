@@ -1,4 +1,4 @@
-﻿namespace Dataprovider.Db.Models
+﻿namespace Accounts.Dataprovider.Db.Models
 {
     using AlbedoTeam.Sdk.DataLayerAccess.Abstractions;
     using AlbedoTeam.Sdk.DataLayerAccess.Attributes;
