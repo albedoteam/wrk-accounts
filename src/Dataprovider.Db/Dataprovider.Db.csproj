@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AlbedoTeam.Sdk.DataLayerAccess" Version="1.0.0-CI-20210417-180306"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Core.UseCases\Core.UseCases.csproj"/>
+    </ItemGroup>
+
+</Project>
