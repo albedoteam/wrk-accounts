@@ -2,10 +2,10 @@
 {
     using System.Threading.Tasks;
     using AccountGrpc;
+    using Albedo.Sdk.UseCases.Responses;
     using AutoMapper;
     using Core.Entities;
     using Core.UseCases.Interactors.Requests;
-    using Core.UseCases.Interactors.Responses;
     using Extensions;
     using Grpc.Core;
     using MediatR;

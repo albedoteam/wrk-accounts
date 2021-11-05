@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Interactors.Responses
+﻿namespace Albedo.Sdk.UseCases.Responses
 {
     using System.Collections.Generic;
     using Abstractions;

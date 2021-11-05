@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Abstractions
+﻿namespace Albedo.Sdk.UseCases.Abstractions
 {
     using Enums;
 

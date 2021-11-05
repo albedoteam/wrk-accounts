@@ -2,9 +2,9 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
+    using Albedo.Sdk.UseCases.Enums;
+    using Albedo.Sdk.UseCases.FailFast;
     using Entities;
-    using Enums;
-    using FailFast;
     using InterfaceAdapters;
     using MediatR;
     using Requests;

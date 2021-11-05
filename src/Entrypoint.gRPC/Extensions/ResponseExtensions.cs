@@ -1,7 +1,7 @@
 namespace Accounts.Business.Extensions
 {
-    using Core.UseCases.Enums;
-    using Core.UseCases.FailFast;
+    using Albedo.Sdk.UseCases.Enums;
+    using Albedo.Sdk.UseCases.FailFast;
     using Grpc.Core;
 
     public static class ResponseExtensions

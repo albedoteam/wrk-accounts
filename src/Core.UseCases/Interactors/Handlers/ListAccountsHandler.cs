@@ -2,13 +2,14 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
+    using Albedo.Sdk.UseCases.Abstractions;
+    using Albedo.Sdk.UseCases.FailFast;
+    using Albedo.Sdk.UseCases.Responses;
     using AutoMapper;
     using Entities;
-    using FailFast;
     using InterfaceAdapters;
     using MediatR;
     using Requests;
-    using Responses;
 
     public class ListAccountsHandler : IRequestHandler<ListAccounts, Result<PagedResponse<Account>>>
     {

@@ -1,9 +1,9 @@
 ﻿namespace Dataprovider.Db.Mappers
 {
+    using Albedo.Sdk.UseCases.Abstractions;
     using AlbedoTeam.Sdk.DataLayerAccess.Utils.Query;
     using AutoMapper;
     using Core.Entities;
-    using Core.UseCases.InterfaceAdapters;
     using Models;
     using MongoDB.Bson;
 

@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.Enums
+﻿namespace Albedo.Sdk.UseCases.Enums
 {
     public enum ErrorType
     {

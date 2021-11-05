@@ -2,7 +2,7 @@
 {
     using System;
     using System.Reflection;
-    using Core.UseCases.FailFast;
+    using Albedo.Sdk.UseCases;
     using FluentValidation;
     using MediatR;
     using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +22,7 @@
         private static IServiceCollection AddHandlers(this IServiceCollection services)
         {
             return services
-                .AddScoped(typeof(IPipelineBehavior<,>), typeof(FailFastRequestBehavior<,>))
+                .AddPipelineBehaviors()
                 .AddMediatR(AssemblyName);
         }
 

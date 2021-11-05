@@ -1,7 +1,7 @@
 ﻿namespace Core.UseCases.Interactors.Requests
 {
+    using Albedo.Sdk.UseCases.FailFast;
     using Entities;
-    using FailFast;
     using MediatR;
 
     public class GetAccount : IRequest<Result<Account>>

@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dataprovider.Db", "src\Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "src\Configuration\Configuration.csproj", "{4DC3A703-E7BB-4F4F-A5C0-420FFEEBF3CE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sdk", "sdk", "{EDBE3FB0-2A22-4F41-AC39-9FD5525AD844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Albedo.Sdk.UseCases", "sdk\Albedo.Sdk.UseCases\Albedo.Sdk.UseCases.csproj", "{4C0E2F0D-7EB1-4604-B75A-1422DAA2DBFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{4DC3A703-E7BB-4F4F-A5C0-420FFEEBF3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC3A703-E7BB-4F4F-A5C0-420FFEEBF3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DC3A703-E7BB-4F4F-A5C0-420FFEEBF3CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0E2F0D-7EB1-4604-B75A-1422DAA2DBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0E2F0D-7EB1-4604-B75A-1422DAA2DBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0E2F0D-7EB1-4604-B75A-1422DAA2DBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0E2F0D-7EB1-4604-B75A-1422DAA2DBFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +71,6 @@ Global
 		{11BC9536-7065-499D-A6F6-406E0B7C13AA} = {25ED4BBF-702D-498D-B4DE-8CE1976A90C3}
 		{B76E15DE-F076-460E-BA6F-9554C1B5F498} = {25ED4BBF-702D-498D-B4DE-8CE1976A90C3}
 		{4DC3A703-E7BB-4F4F-A5C0-420FFEEBF3CE} = {25ED4BBF-702D-498D-B4DE-8CE1976A90C3}
+		{4C0E2F0D-7EB1-4604-B75A-1422DAA2DBFA} = {EDBE3FB0-2A22-4F41-AC39-9FD5525AD844}
 	EndGlobalSection
 EndGlobal

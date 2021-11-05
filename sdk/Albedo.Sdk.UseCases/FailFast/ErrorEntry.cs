@@ -1,4 +1,4 @@
-namespace Core.UseCases.FailFast
+namespace Albedo.Sdk.UseCases.FailFast
 {
     public class ErrorEntry
     {

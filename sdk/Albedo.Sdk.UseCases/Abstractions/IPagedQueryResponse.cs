@@ -1,4 +1,4 @@
-﻿namespace Core.UseCases.InterfaceAdapters
+﻿namespace Albedo.Sdk.UseCases.Abstractions
 {
     using System.Collections.Generic;
 

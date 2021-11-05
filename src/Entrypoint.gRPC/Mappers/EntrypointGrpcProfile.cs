@@ -1,10 +1,10 @@
 ﻿namespace Accounts.Business.Mappers
 {
     using AccountGrpc;
+    using Albedo.Sdk.UseCases.Responses;
     using AutoMapper;
     using Core.Entities;
     using Core.UseCases.Interactors.Requests;
-    using Core.UseCases.Interactors.Responses;
 
     public class EntrypointGrpcProfile : Profile
     {
