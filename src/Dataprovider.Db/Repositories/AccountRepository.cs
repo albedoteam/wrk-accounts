@@ -64,9 +64,7 @@
 
         public async Task<IPagedQueryResponse<Account>> QueryByPage(IPagedQueryRequest queryRequest)
         {
-            var queryParams = _mapper.Map<IPagedQueryRequest, QueryParams>(queryRequest);
-
-            var request = QueryUtils.GetQueryParams<AccountModel>(queryParams);
+            var request = QueryUtils.GetQueryParams<AccountModel>(_mapper.Map<IPagedQueryRequest, QueryParams>(queryRequest));
             var response = await base.QueryByPage(request);
 
             return _mapper.Map<QueryResponse<AccountModel>, IPagedQueryResponse<Account>>(response);
