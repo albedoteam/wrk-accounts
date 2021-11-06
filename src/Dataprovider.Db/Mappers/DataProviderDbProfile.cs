@@ -15,7 +15,7 @@
                 .ForMember(m => m.Id, opt => opt.MapFrom(e => new ObjectId(e.Id)));
 
             CreateMap<AccountModel, Account>(MemberList.Destination)
-                .ForMember(e => e.Id, opt => opt.MapFrom(m => m.ToString()));
+                .ForMember(e => e.Id, opt => opt.MapFrom(m => m.Id.ToString()));
 
             CreateMap<IPagedQueryRequest, QueryParams>(MemberList.Destination);
 

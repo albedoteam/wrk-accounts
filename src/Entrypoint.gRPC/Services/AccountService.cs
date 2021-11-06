@@ -33,7 +33,9 @@
 
         public override async Task<ListAccountsResponse> List(ListRequest request, ServerCallContext context)
         {
-            var response = await _mediator.Send(_mapper.Map<ListRequest, ListAccounts>(request));
+            var listAccounts = _mapper.Map<ListRequest, ListAccounts>(request);
+            
+            var response = await _mediator.Send(listAccounts);
 
             if (response.HasErrors)
                 response.ThrowError();

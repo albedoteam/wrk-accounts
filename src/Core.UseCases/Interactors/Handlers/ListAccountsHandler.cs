@@ -25,7 +25,10 @@
         public async Task<Result<PagedResponse<Account>>> Handle(ListAccounts request,
             CancellationToken cancellationToken)
         {
-            var queryResponse = await _repository.QueryByPage(_mapper.Map<ListAccounts, IPagedQueryRequest>(request));
+            var queryRequest = _mapper.Map<ListAccounts, IPagedQueryRequest>(request);
+            
+            var queryResponse = await _repository.QueryByPage(queryRequest);
+            
             var response = _mapper.Map<IPagedQueryResponse<Account>, PagedResponse<Account>>(queryResponse);
 
             return new Result<PagedResponse<Account>>(response);

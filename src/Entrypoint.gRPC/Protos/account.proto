@@ -21,8 +21,8 @@ message ListRequest {
   bool showDeleted = 1;
   int32 page = 2;
   int32 pageSize = 3;
-  string filterBy = 4;
-  string orderBy = 5;
+  optional string filterBy = 4;
+  optional string orderBy = 5;
   Sorting sorting = 6;
 }
 

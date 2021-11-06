@@ -5,6 +5,7 @@
     using AutoMapper;
     using Core.Entities;
     using Core.UseCases.Interactors.Requests;
+    using Google.Protobuf.WellKnownTypes;
 
     public class EntrypointGrpcProfile : Profile
     {
@@ -18,8 +19,12 @@
             CreateMap<DeleteRequest, DeleteAccount>().ReverseMap();
 
             // responses
-            CreateMap<Account, AccountResponse>().ReverseMap();
-            CreateMap<PagedResponse<Account>, ListAccountsResponse>(MemberList.Destination);
+            CreateMap<Account, AccountResponse>(MemberList.Destination)
+                .ForMember(ar => ar.CreatedAt, opt => opt.MapFrom(a => a.CreatedAt.ToTimestamp()));
+
+            CreateMap<PagedResponse<Account>, ListAccountsResponse>(MemberList.Destination)
+                .ForMember(lar => lar.FilterBy, opt => opt.MapFrom(pr => pr.FilterBy ?? ""))
+                .ForMember(lar => lar.OrderBy, opt => opt.MapFrom(pr => pr.OrderBy ?? ""));
         }
     }
 }

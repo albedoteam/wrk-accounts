@@ -9,7 +9,7 @@
 
     public static class SetupUseCases
     {
-        private const string UseCasesAssemblyName = "Core.UseCases";
+        private const string UseCasesAssemblyName = "Accounts.Core.UseCases";
         private static readonly Assembly AssemblyName = AppDomain.CurrentDomain.Load(UseCasesAssemblyName);
 
         public static IServiceCollection AddUseCases(this IServiceCollection services)
