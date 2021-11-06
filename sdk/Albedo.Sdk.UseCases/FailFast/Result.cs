@@ -16,7 +16,7 @@
             Errors = new ReadOnlyCollection<ErrorEntry>(_errors);
         }
 
-        public Result(ErrorType errorType, string errorMessage = null)
+        public Result(ErrorType errorType, string errorMessage)
         {
             ErrorType = errorType;
             _errors.Add(new ErrorEntry(errorType.ToString(), errorMessage));

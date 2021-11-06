@@ -24,7 +24,7 @@
 
             return account is { }
                 ? new Result<Account>(account)
-                : new Result<Account>(ErrorType.NotFound);
+                : new Result<Account>(ErrorType.NotFound, $"Id: {request.Id}");
         }
     }
 }

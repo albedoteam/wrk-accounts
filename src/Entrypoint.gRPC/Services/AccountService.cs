@@ -22,7 +22,7 @@
         }
 
         public override async Task<AccountResponse> Get(GetRequest request, ServerCallContext context)
-        {
+        {   
             var response = await _mediator.Send(_mapper.Map<GetRequest, GetAccount>(request));
 
             if (response.HasErrors)
@@ -34,7 +34,7 @@
         public override async Task<ListAccountsResponse> List(ListRequest request, ServerCallContext context)
         {
             var listAccounts = _mapper.Map<ListRequest, ListAccounts>(request);
-            
+
             var response = await _mediator.Send(listAccounts);
 
             if (response.HasErrors)

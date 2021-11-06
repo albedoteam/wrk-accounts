@@ -26,9 +26,9 @@
             CancellationToken cancellationToken)
         {
             var queryRequest = _mapper.Map<ListAccounts, IPagedQueryRequest>(request);
-            
+
             var queryResponse = await _repository.QueryByPage(queryRequest);
-            
+
             var response = _mapper.Map<IPagedQueryResponse<Account>, PagedResponse<Account>>(queryResponse);
 
             return new Result<PagedResponse<Account>>(response);

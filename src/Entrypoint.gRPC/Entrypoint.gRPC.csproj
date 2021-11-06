@@ -9,14 +9,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="10.1.1" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
-        <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
-        <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+        <PackageReference Include="AutoMapper" Version="10.1.1"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2"/>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.40.0"/>
+        <PackageReference Include="Serilog.AspNetCore" Version="4.1.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Protobuf Include="Protos\account.proto" GrpcServices="Server" Link="Protos\account.proto" ProtoRoot="Protos\" />
+        <Protobuf Include="Protos\account.proto" GrpcServices="Server" Link="Protos\account.proto" ProtoRoot="Protos\"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -31,8 +31,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Configuration\Configuration.csproj" />
-        <ProjectReference Include="..\Core.UseCases\Core.UseCases.csproj" />
+        <ProjectReference Include="..\Configuration\Configuration.csproj"/>
+        <ProjectReference Include="..\Core.UseCases\Core.UseCases.csproj"/>
     </ItemGroup>
 
 </Project>

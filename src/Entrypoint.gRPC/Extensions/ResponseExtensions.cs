@@ -1,12 +1,13 @@
 namespace Accounts.Entrypoint.gRPC.Extensions
 {
+    using System.Linq;
     using Albedo.Sdk.UseCases.Enums;
     using Albedo.Sdk.UseCases.FailFast;
     using Grpc.Core;
 
     public static class ResponseExtensions
     {
-        public static void ThrowError<T>(this Result<T> response)
+        public static RpcException ThrowError<T>(this Result<T> response)
         {
             if (response is null)
                 throw new RpcException(new Status(StatusCode.Internal, "Response is null"));
@@ -25,9 +26,11 @@ namespace Accounts.Entrypoint.gRPC.Extensions
             {
                 var metadata = new Metadata();
                 foreach (var responseError in response.Errors)
-                    metadata.Add(new Metadata.Entry(responseError.Key, responseError.Value));
+                    metadata.Add(new Metadata.Entry(responseError.Key, responseError.Value ?? ""));
 
-                return new RpcException(new Status(statusCode, statusCode.ToString()), metadata);
+                return new RpcException(
+                    new Status(statusCode, string.Join(", ", response.Errors.Select(e => $"{e.Key}-{e.Value}"))),
+                    metadata);
             }
         }
     }

@@ -11,6 +11,6 @@
         Task<Account> FindById(string id, bool showDeleted = false);
         Task DeleteById(string id);
         Task UpdateById(string id, Account account);
-        Task<IPagedQueryResponse<Account>> QueryByPage(IPagedQueryRequest queryRequest);
+        Task<IPagedQueryResponse<Account>> QueryByPage(IPagedQueryRequest pagedRequest);
     }
 }

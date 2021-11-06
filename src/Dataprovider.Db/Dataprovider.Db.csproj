@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AlbedoTeam.Sdk.DataLayerAccess" Version="1.0.0-CI-20210417-180306" />
+        <PackageReference Include="AlbedoTeam.Sdk.DataLayerAccess" Version="1.0.0-CI-20210417-180306"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Core.UseCases\Core.UseCases.csproj" />
+        <ProjectReference Include="..\Core.UseCases\Core.UseCases.csproj"/>
     </ItemGroup>
 
 </Project>

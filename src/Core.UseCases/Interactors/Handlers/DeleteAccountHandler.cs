@@ -22,7 +22,7 @@
         {
             var account = await _repository.FindById(request.Id);
             if (account is null)
-                return new Result<Account>(ErrorType.NotFound);
+                return new Result<Account>(ErrorType.NotFound, $"Id: {request.Id}");
 
             await _repository.DeleteById(request.Id);
 

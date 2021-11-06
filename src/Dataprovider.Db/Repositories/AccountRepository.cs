@@ -62,12 +62,14 @@
             await base.UpdateById(id, update);
         }
 
-        public async Task<IPagedQueryResponse<Account>> QueryByPage(IPagedQueryRequest queryRequest)
+        public async Task<IPagedQueryResponse<Account>> QueryByPage(IPagedQueryRequest pagedRequest)
         {
-            var request = QueryUtils.GetQueryParams<AccountModel>(_mapper.Map<IPagedQueryRequest, QueryParams>(queryRequest));
-            var response = await base.QueryByPage(request);
+            var queryParams = _mapper.Map<IPagedQueryRequest, QueryParams>(pagedRequest);
 
-            return _mapper.Map<QueryResponse<AccountModel>, IPagedQueryResponse<Account>>(response);
+            var queryRequest = QueryUtils.GetQueryParams<AccountModel>(queryParams);
+            var queryResponse = await base.QueryByPage(queryRequest);
+
+            return _mapper.Map<QueryResponse<AccountModel>, IPagedQueryResponse<Account>>(queryResponse);
         }
     }
 }

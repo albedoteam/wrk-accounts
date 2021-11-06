@@ -26,7 +26,9 @@
             var exists = await _repository.Exists(request.IdentificationNumber);
 
             if (exists)
-                return new Result<Account>(ErrorType.AlreadyExists);
+                return new Result<Account>(
+                    ErrorType.AlreadyExists,
+                    $"Identification Number: {request.IdentificationNumber}");
 
             var account = await _repository.InsertOne(_mapper.Map<CreateAccount, Account>(request));
 
